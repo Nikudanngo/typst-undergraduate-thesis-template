@@ -1,11 +1,3 @@
-// 参考文献の形式設定
-#let bibliography-title = "参考文献"
-#let cite = (key) => super(text("[", key, "]"))
-
-// フォントの設定
-// google Font(https://fonts.google.com/)から以下のフォントをダウンロードし、各OSのシステムにインストールしてください。
-// - Noto Sans JP
-// - Noto Serif JP
 #let sans = ("Noto Sans JP")
 #let serif = ("Noto Serif JP")
 
@@ -101,18 +93,11 @@
 		it
 	}
 	outline(
-		title: [#text(size: 1.3em, weight: "medium", "目次") #v(2em)], 
+		title: [#text(size: 1.3em, font: sans,weight: "medium", "目次") #v(2em)], 
 		indent: 2em,
 	)
 	pagebreak()
 	doc
-	bibliography(
-		"reference.bib" 
-		// full: true,
-	)
-	pagebreak()
-	set page(numbering: none)
-	include "chapter99/chapter99.typ"
 }
 
 #let mainPage(doc) = {

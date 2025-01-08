@@ -1,3 +1,8 @@
+// フォントの設定
+// google Font(https://fonts.google.com/)から以下のフォントをダウンロードし、各OSのシステムにインストールしてください。
+// - Noto Sans JP
+// - Noto Serif JP
+
 #import "template.typ": titlePage,mainPage
 // chapterに対応した図番号をつけるためのライブラリ
 #import "@preview/i-figured:0.2.4"
@@ -32,4 +37,12 @@
 
 #include "chapter6/chapter6.typ"
 
-// 謝辞はchapter99/chapter99.typに書く
+#pagebreak()
+#heading(numbering: none, [参考文献])
+#bibliography(
+	"reference.bib",
+  title: none
+)
+#pagebreak()
+#set page(numbering: none)
+#include "chapter99/chapter99.typ"
