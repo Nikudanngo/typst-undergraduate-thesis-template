@@ -39,6 +39,7 @@
 
 #pagebreak()
 #heading(numbering: none, [参考文献])
+#set text(lang: "en")
 #bibliography(
 	"reference.bib",
   title: none

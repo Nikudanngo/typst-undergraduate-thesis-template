@@ -2,7 +2,7 @@
 #let serif = ("Noto Serif JP")
 
 // text setting
-#set text(lang: "ja", font: serif, 12pt)
+#set text(font: serif, 12pt)
 #set par(justify: true, first-line-indent: 1em, spacing: 0.65em)
 
 // 図表キャプションのカスタマイズ
@@ -50,7 +50,7 @@
 	))
 
 	// フォントサイズの設定
-	set text(lang: "ja", size: 18pt, weight: "medium", font: serif)
+	set text(size: 18pt, weight: "medium", font: serif)
 	align(center + horizon)[
 		#text(size: 14pt, [#year 年度 卒業論文])
 		#v(1em)
@@ -76,9 +76,9 @@
 	set page(
 		margin: (
 			top: 25mm, 
-			bottom: 25mm, 
-			left: 15mm, 
-			right: 15mm
+			bottom: 20mm, 
+			left: 20mm, 
+			right: 20mm
 		),
 		numbering: "1"
 	)
@@ -101,13 +101,6 @@
 }
 
 #let mainPage(doc) = {
-	set page(margin: (
-		top: 25mm, 
-		bottom: 25mm, 
-		left: 15mm, 
-		right: 15mm 
-		)
-	)
 	set math.equation(numbering: "(1)")
 	set text(font: serif, size: 12pt)
 	set par(justify: true, first-line-indent: 1em, spacing: 0.65em)
