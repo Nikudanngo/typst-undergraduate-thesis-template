@@ -103,7 +103,7 @@
 #let mainPage(doc) = {
 	set math.equation(numbering: "(1)")
 	set text(lang: "ja", font: serif, size: 12pt)
-	set ref(supplement: "")
+	set ref(supplement: none)
 	set par(justify: true, first-line-indent: 1em, spacing: 0.65em)
 	set heading(numbering: "1.1 ")
 	show heading.where(level: 1): set heading(numbering: "第1章 ")
