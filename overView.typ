@@ -1,15 +1,13 @@
 #import "overViewTemplate.typ": rsjconf
 #show: doc => rsjconf(
-  title: "Webアプリケーションにおける転移学習に関する研究", authors: (
-	(name: "遠藤 哲"),
+  title: "概要タイトル", authors: (
+	(name: "卒論 太郎"),
 	(name: "小林 裕之", supervisor: true),
   ),
   doc
 )
 
 = Typstのセットアップ
-Typst@typst で論文を書くためのテンプレートを提供します。
-== セットアップ
 + このテンプレートをお好みのディレクトリに配置
 + vscodeでmain.typを含むrootで開く
 + `Tinymist Typst`の拡張機能をインストール
@@ -45,14 +43,15 @@ $<math>
 
 違いはご覧の通り文頭の字下げがあるかないかだよ。
 
-これで改カラム
-#colbreak()
+
+#lorem(440)
 
 = 結論
 卒論で書いた内容を一枚のページに要約して頑張って書いてください！
 
 ps. このテンプレートは小林先生が作ったRSJ2024のテンプレートを元にしています。🙏 @rsj_typst_template
+K
 
 
-#set text(9pt)
+#set text(lang: "en", 9pt)
 #bibliography("reference.bib", title: block(width: 100%, align(center, text(11pt, "参考文献"))))

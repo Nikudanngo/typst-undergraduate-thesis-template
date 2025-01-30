@@ -12,15 +12,16 @@
         supervisor: true,
 	),
     ),
-    abstract: [],
+    studentNumber: "123-456",
     doc
 ) = {
     let sans = ("Noto Sans JP", "sans")
     let serif = ("Noto Serif JP", "serif")
-    set text(lang: "ja", font: serif, 9.5pt)
-    set page(margin: (bottom: 27mm, top:28mm, left: 20mm, right: 20mm))
+    set text(lang: "ja", font: serif, 8.5pt)
+    set page(margin: (bottom: 27mm, top:30mm, left: 20mm, right: 20mm))
     set par(justify: true, first-line-indent: 1em, leading: 0.5em, spacing: 0.5em)
     // equation numbering as (1), (2), ...
+    place(top + left, dy: -20pt, [#text(size: 12pt,studentNumber)])
     set math.equation(numbering: "(1)")
     // equation reference as (1)
     show ref: it => {
@@ -49,7 +50,7 @@
     show heading: set text(10pt, font: sans, weight: "medium")
     show heading.where(level: 1): it => {
     set align(center)
-	set text(11pt)
+	set text(10pt)
 	it
     }
     // workaround for the first-line-indent bug? of Typst (0.11.0)
@@ -62,23 +63,23 @@
     show list: it => {it;text()[#v(0.5em, weak: true)];text()[#h(0em)]}
     // paper title
     // v(1.5mm)
-    text(17pt, weight: "medium", font: sans, title)
+    text(14pt, weight: "medium", font: sans, title)
     // authors
     let nAuthors = authors.len()
     let nCols = calc.min(nAuthors, 3)
-    v(6mm)
+    v(5mm)
     grid(
 	columns: nCols,
 	column-gutter: 10mm,
 	..authors.map(a => [
 	    #stack(
 		dir: ltr,
-		if ("supervisor" in a) and a.supervisor {text(12pt, "指導教員: ")},
-		[#text(12pt, [#a.name])]
+		if ("supervisor" in a) and a.supervisor {text(10pt, "指導教員: ")},
+		[#text(10pt, [#a.name])]
 	    )
 	])
     )
     set align(left)
     v(10mm)
-    columns(2, doc)
+    columns(2,gutter: 40pt, doc)
 }
