@@ -4,6 +4,7 @@
 	(name: "卒論 太郎"),
 	(name: "小林 裕之", supervisor: true),
   ),
+  studentNumber: "920-017",
   doc
 )
 
