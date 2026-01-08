@@ -3,7 +3,7 @@
 // - Noto Sans JP
 // - Noto Serif JP
 
-#import "template.typ": titlePage,mainPage
+#import "template.typ": mainPage, titlePage
 // chapterに対応した図番号をつけるためのライブラリ
 #import "@preview/i-figured:0.2.4"
 #show heading: i-figured.reset-counters
@@ -11,18 +11,16 @@
 
 //↓ここから書き換える
 #show: doc => titlePage(
-  year: "2024",
-  title1: "一行目タイトル",
-  title2: "",
-  deadline: "1月30日",
-  university: "大阪工業大学大学院",
-  department: "ロボティクス＆デザイン工学研究科",
-  faculty: "ロボティクス＆デザイン工学専攻",
-  lab: "知能ロボティクス研究室",
+  // doc-type: "修 士 論 文 の 概 要",
+  doc-type: "修 　士 　論 　文",
+  year: "2026",
+  title1: "一行目のタイトル",
+  title2: "二行目のタイトル",
+  deadline: "1月31日",
   name: "卒論 太郎",
   supervisor: "小林 裕之",
-  co-supervisor: "",　// ここは指導教員のみの場合はここは空欄にしておく。
-  doc
+  co-supervisor: "",
+  doc,
 )
 
 #show: doc => mainPage(doc)
@@ -43,8 +41,8 @@
 #heading(numbering: none, [参考文献])
 #set text(lang: "en")
 #bibliography(
-	"reference.bib",
-  title: none
+  "reference.bib",
+  title: none,
 )
 #pagebreak()
 #set page(numbering: none)
