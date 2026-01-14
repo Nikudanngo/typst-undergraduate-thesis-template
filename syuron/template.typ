@@ -98,7 +98,7 @@
 		]
 		\
 		#align(center + bottom)[
-			#set text(size: 26pt, weight: "bold", font: sans, tracking: 0.3em)
+			#set text(size: 26pt, weight: "medium", font: sans, tracking: 0.3em)
 			#university
 		]
 	]
