@@ -79,11 +79,11 @@
 			#let jb = linebreak(justify: true)
 			#let width = 78pt
 
-			#text( " " + box(width: width,[#text("指導教員" + jb)]) + h(1fr) + text(size: 18pt, weight: "bold",supervisor) + h(1.2fr) + inkan() + "")
+			#text( " " + box(width: width,[#text("指導教員" + jb)]) + h(1fr) + text(size: 18pt, weight: "bold", supervisor) + h(1.2fr) + inkan() + "")
 			#v(-0.8em)
 			#line(length: 100%, stroke: (dash: "dashed"))
 			#v(0.5em)
-			#text( " " + box(width: width,[#text("補助担当教員" + jb)]) + h(1fr) + text(size: 18pt, weight: "bold",co-supervisor) + h(1.2fr) + inkan() + "")
+			#text( " " + box(width: width,[#text("補助担当教員" + jb)]) + h(1fr) + text(size: 18pt, weight: "bold", co-supervisor) + h(1.2fr) + inkan() + "")
 			#v(-0.8em)
 			#line(length: 100%)
 			\ 
@@ -92,7 +92,7 @@
 			#v(-0.8em)
 			#line(length: 100%)
 			\
-			#text( " " + box(width: width,[#text("申請者氏名" + jb)]) + h(1fr) + text(size: 18pt, weight: "bold",name) + h(1.2fr) + inkan() + "")
+			#text( " " + box(width: width,[#text("申請者氏名" + jb)]) + h(1fr) + text(size: 18pt, weight: "bold", name) + h(1.2fr) + inkan() + "")
 			#v(-0.8em)
 			#line(length: 100%)
 		]
