@@ -22,7 +22,7 @@
 			stroke: 1.6pt + red,
 			[
 				#set par(leading: 0.1em)
-				#text(name.join("\n"),fill:red, size: 16pt, font: serif,weight: "bold",spacing: 0.1em)
+				#text(name.join("\n"), fill:red, size: 16pt, font: serif, weight: "bold", spacing: 0.1em)
 				]
 			)
 		])
