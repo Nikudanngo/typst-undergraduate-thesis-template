@@ -53,7 +53,7 @@
 		#set text(size: 26pt, weight: "bold", font: sans)
 		#underline(offset: 10pt, stroke: 1pt, extent: 40pt ,text(size: 26pt,font: sans, tracking: 1.4em, "修士論文"))
 		#v(-0.5em)
-		#text(size: 12pt,spacing: 0em, tracking: 0.1em, [(#year 年 #deadline #h(1em) 提出)])
+		#text(size: 12pt, spacing: 0em, weight: "medium", font: serif, tracking: 0.1em, [(#year 年 #deadline #h(1em) 提出)])
 		#v(3em)
 		#align(left)[
 			#set text(size: 16pt, weight: "bold", font: serif, spacing: 0.5em)
