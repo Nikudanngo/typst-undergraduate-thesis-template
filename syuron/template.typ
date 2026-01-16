@@ -41,43 +41,49 @@
 ) = {
 	set par(justify: true, first-line-indent: 0pt)
 	set page(margin: (
-		top: 25mm, 
-		bottom: 20mm, 
-		left: 5mm, 
-		right: 5mm
+		top: 45mm,
+		bottom: 30mm, 
+		left: 20mm, 
+		right: 20mm
 	))
 
 	// フォントサイズの設定
 	set text(size: 18pt, weight: "medium", font: serif)
 	align(center)[
-		#underline(offset: 10pt, stroke: 1pt, extent: 30pt ,text(size: 40pt,font: sans, tracking: 1.4em, "修士論文")) \ \
-		#text(spacing: 0em, tracking: 0.2em, [(#year 年 #h(1em) #deadline #h(1em) 提出)])
-		#v(4em)
+		#set text(size: 26pt, weight: "bold", font: sans)
+		#underline(offset: 10pt, stroke: 1pt, extent: 40pt ,text(size: 26pt,font: sans, tracking: 1.4em, "修士論文"))
+		#v(-0.5em)
+		#text(size: 12pt, spacing: 0em, weight: "medium", font: serif, tracking: 0.1em, [(#year 年 #deadline #h(1em) 提出)])
+		#v(3em)
 		#align(left)[
-			#set text(size: 20pt, font: serif, spacing: 0.5em)
+			#set text(size: 16pt, weight: "bold", font: serif, spacing: 0.5em)
 			// titleのアルファベットはserif、それ以外はsans
 			#show regex("[a-zA-Z]+"): set text(font: serif)
-			論文題目 #title1
+			論文題目 
+			#set text(size: 20pt)
+			#h(1fr)#title1#h(1fr)
 			#v(-0.5em)
-			#line(length: 100%, stroke: 1.4pt)
+			#line(length: 100%, stroke: 1pt)
+			#set align(center)
 			#title2
 			#v(-0.5em)
-			#line(length: 100%, stroke: 1.4pt)
+			#line(length: 100%, stroke: 1pt)
 		]
 		\
 		\ 
 		\
-		#box(width: 80%)[
+		#box(width: 70%)[
 			#set align(left)
-			#set text(font: serif, size: 18pt)
+			#set text(font: serif, size: 13pt)
 			#set par(justify: true)
 			#let jb = linebreak(justify: true)
-			#let width = 110pt
+			#let width = 78pt
 
-			#text( " " + box(width: width,[#text("指導教員" + jb)]) + h(1fr) + supervisor + h(1.2fr) + inkan() + "")
+			#text( " " + box(width: width,[#text("指導教員" + jb)]) + h(1fr) + text(size: 18pt, weight: "bold",supervisor) + h(1.2fr) + inkan() + "")
 			#v(-0.8em)
 			#line(length: 100%, stroke: (dash: "dashed"))
-			#text( " " + box(width: width,[#text("補助担当教員" + jb)]) + h(1fr) + co-supervisor + h(1.2fr) + inkan() + "")
+			#v(0.5em)
+			#text( " " + box(width: width,[#text("補助担当教員" + jb)]) + h(1fr) + text(size: 18pt, weight: "bold",co-supervisor) + h(1.2fr) + inkan() + "")
 			#v(-0.8em)
 			#line(length: 100%)
 			\ 
@@ -86,13 +92,13 @@
 			#v(-0.8em)
 			#line(length: 100%)
 			\
-			#text( " " + box(width: width,[#text("申請者氏名" + jb)]) + h(1fr) + name + h(1.2fr) + inkan() + "")
+			#text( " " + box(width: width,[#text("申請者氏名" + jb)]) + h(1fr) + text(size: 18pt, weight: "bold",name) + h(1.2fr) + inkan() + "")
 			#v(-0.8em)
 			#line(length: 100%)
 		]
 		\
 		#align(center + bottom)[
-			#set text(size: 36pt, font: sans, tracking: 0.2em)
+			#set text(size: 26pt, weight: "medium", font: sans, tracking: 0.3em)
 			#university
 		]
 	]
@@ -153,15 +159,24 @@
 	set list(indent: 2em , spacing: 1.5em,marker: ([#sym.circle.filled.tiny]))
 	set enum(indent: 2em, spacing: 1.5em)
 	show list.where() : it => [
-		#linebreak()
+		#v(0.5em)
 		#it
+		#v(0.5em)
 	]
 	show enum.where() : it => [
-		#linebreak()
+		#v(0.5em)
 		#it
+		#v(0.5em)
 	]
 	show figure.where(
   	kind: table
 	): set figure.caption(position: top)
+	
+	show figure.where() : it => [
+		#v(0.5em)
+		#it
+		#v(0.5em)
+	]
+
 	doc
 }
