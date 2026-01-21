@@ -139,5 +139,13 @@
 	show figure.where(
   	kind: table
 	): set figure.caption(position: top)
+
+	show math.equation.where() : it => [
+		#if(it.block){
+			v(0.5em)
+			it
+			v(0.5em)
+		}
+	]
 	doc
 }
