@@ -129,16 +129,24 @@
 	set list(indent: 2em , spacing: 1.5em,marker: ([#sym.circle.filled.tiny]))
 	set enum(indent: 2em, spacing: 1.5em)
 	show list.where() : it => [
-		#linebreak()
+		#v(0.5em)
 		#it
+		#v(0.5em)
 	]
 	show enum.where() : it => [
-		#linebreak()
+		#v(0.5em)
 		#it
+		#v(0.5em)
 	]
 	show figure.where(
   	kind: table
 	): set figure.caption(position: top)
+	
+	show figure.where() : it => [
+		#v(0.5em)
+		#it
+		#v(0.5em)
+	]
 
 	show math.equation.where() : it => [
 		#if(it.block){
