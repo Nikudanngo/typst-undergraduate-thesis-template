@@ -153,6 +153,8 @@
 			v(0.5em)
 			it
 			v(0.5em)
+		}else{
+			it
 		}
 	]
 	doc
