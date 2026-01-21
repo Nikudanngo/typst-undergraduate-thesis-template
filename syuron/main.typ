@@ -8,6 +8,7 @@
 #import "@preview/i-figured:0.2.4"
 #show heading: i-figured.reset-counters
 #show figure: i-figured.show-figure
+#show math.equation: i-figured.show-equation
 
 //↓ここから書き換える
 #show: doc => titlePage(

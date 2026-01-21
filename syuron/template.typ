@@ -131,7 +131,6 @@
 }
 
 #let mainPage(doc) = {
-	set math.equation(numbering: "(1)")
 	set text(lang: "ja", font: serif, size: 12pt)
 	set ref(supplement: none)
 	set par(justify: true, first-line-indent: 1em, spacing: 0.65em)
@@ -178,5 +177,12 @@
 		#v(0.5em)
 	]
 
+	show math.equation.where() : it => [
+		#if(it.block){
+			v(0.5em)
+			it
+			v(0.5em)
+		}
+	]
 	doc
 }
