@@ -53,9 +53,9 @@
 	align(center)[
 		#set text(size: 26pt, weight: "semibold", font: sans)
 		#underline(offset: 10pt, stroke: 1pt, extent: 40pt ,if(isOverview) {
-			text(size: 26pt,font: sans, tracking: 1.4em, "修士論文")
-		} else {
 			text(size: 26pt,font: sans, "修 士 論 文 の 概 要")
+		} else {
+			text(size: 26pt,font: sans, tracking: 1.4em, "修士論文")
 		})
 		#v(-0.5em)
 		#text(size: 12pt, spacing: 0em, weight: "medium", font: serif, tracking: 0.1em, [(#year 年 #deadline #h(1em) 提出)])
@@ -128,7 +128,7 @@
 		it
 	}
 	// 概要の場合は目次出さない
-	if(isOverview) {
+	if(not isOverview) {
 		outline(
 			title: [#text(size: 1.3em, font: sans,weight: "medium", "目次") #v(2em)], 
 			indent: 2em,

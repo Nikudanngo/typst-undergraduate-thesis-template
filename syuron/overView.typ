@@ -1,6 +1,7 @@
 #import "template.typ": titlePage, overviewPage
 
 #show: doc => titlePage(
+  isOverview: true,
   year: "2026",
   title1: "一行目タイトル",
   title2: "",
