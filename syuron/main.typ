@@ -12,6 +12,7 @@
 
 //↓ここから書き換える
 #show: doc => titlePage(
+  isOverview: false,
   year: "2024",
   title1: "一行目タイトル",
   title2: "",

@@ -28,6 +28,7 @@
 #let titlePage(
 	year: "2025",
 	deadline: "1月30日",
+	isOverview: false,
 	title1: "一行目タイトル",
 	title2: "二行目タイトル",
 	university: "大阪工業大学大学院",
@@ -50,8 +51,12 @@
 	// フォントサイズの設定
 	set text(size: 18pt, weight: "medium", font: serif)
 	align(center)[
-		#set text(size: 26pt, weight: "bold", font: sans)
-		#underline(offset: 10pt, stroke: 1pt, extent: 40pt ,text(size: 26pt,font: sans, tracking: 1.4em, "修士論文"))
+		#set text(size: 26pt, weight: "semibold", font: sans)
+		#underline(offset: 10pt, stroke: 1pt, extent: 40pt ,if(isOverview) {
+			text(size: 26pt,font: sans, "修 士 論 文 の 概 要")
+		} else {
+			text(size: 26pt,font: sans, tracking: 1.4em, "修士論文")
+		})
 		#v(-0.5em)
 		#text(size: 12pt, spacing: 0em, weight: "medium", font: serif, tracking: 0.1em, [(#year 年 #deadline #h(1em) 提出)])
 		#v(3em)
@@ -122,11 +127,14 @@
 		v(1.5em, weak: true)
 		it
 	}
-	outline(
-		title: [#text(size: 1.3em, font: sans,weight: "medium", "目次") #v(2em)], 
-		indent: 2em,
-	)
-	pagebreak()
+	// 概要の場合は目次出さない
+	if(not isOverview) {
+		outline(
+			title: [#text(size: 1.3em, font: sans,weight: "medium", "目次") #v(2em)], 
+			indent: 2em,
+		)
+		pagebreak()
+	}
 	doc
 }
 
@@ -188,3 +196,61 @@
 	]
 	doc
 }
+
+#let overviewPage(doc) = {
+	set text(lang: "ja", font: serif, size: 12pt)
+	set ref(supplement: none)
+	set par(justify: true, first-line-indent: 1em, spacing: 0.65em)
+	show heading.where(level: 1): it => [
+		#set text(weight: "semibold", size: 1.4em)
+		#linebreak()
+		#it
+	]
+	show heading.where(level: 2): it => [
+		#set text(weight: "semibold", size: 1.2em)
+		#it
+	]
+	show heading.where(level: 3): it => [
+		#set text(weight: "semibold", size: 1.1em)
+		#it
+	]
+	show heading: it => [
+		#show regex("a-zA-Z1-9"): set text(font: serif)
+		#show regex("[^a-zA-Z1-9]"): set text(font: sans)
+		#it
+    #par(text(size: 0pt, ""))
+  ]
+	set list(indent: 2em , spacing: 1.5em,marker: ([#sym.circle.filled.tiny]))
+	set enum(indent: 2em, spacing: 1.5em)
+	show list.where() : it => [
+		#v(0.5em)
+		#it
+		#v(0.5em)
+	]
+	show enum.where() : it => [
+		#v(0.5em)
+		#it
+		#v(0.5em)
+	]
+	show figure.where(
+  	kind: table
+	): set figure.caption(position: top)
+	
+	show figure.where() : it => [
+		#v(0.5em)
+		#it
+		#v(0.5em)
+	]
+
+	show math.equation.where() : it => [
+		#if(it.block){
+			v(0.5em)
+			it
+			v(0.5em)
+		}else{
+			it
+		}
+	]
+	doc
+}
+
