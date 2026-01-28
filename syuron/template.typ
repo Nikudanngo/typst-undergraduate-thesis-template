@@ -139,7 +139,7 @@
 }
 
 #let mainPage(doc) = {
-	set text(lang: "ja", font: serif, size: 12pt)
+	set text(lang: "ja", font: serif, size: 12pt, weight: "regular")
 	set ref(supplement: none)
 	set par(justify: true, first-line-indent: 1em, spacing: 0.65em)
 	set heading(numbering: "1.1 ")
