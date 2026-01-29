@@ -64,7 +64,7 @@
 			#set text(size: 16pt, weight: "bold", font: serif, spacing: 0.5em)
 			// titleのアルファベットはserif、それ以外はsans
 			#show regex("[a-zA-Z]+"): set text(font: serif)
-			論文題目 
+			#text(weight: "semibold","論文題目")
 			#set text(size: 20pt)
 			#h(1fr)#title1#h(1fr)
 			#v(-0.5em)
