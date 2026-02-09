@@ -41,7 +41,7 @@
 	doc
 ) = {
 	set par(justify: true, first-line-indent: 0pt)
-	set page(margin: (
+	set page(numbering: none,margin: (
 		top: 45mm,
 		bottom: 30mm, 
 		left: 20mm, 
@@ -115,7 +115,6 @@
 			left: 25mm, 
 			right: 15mm
 		),
-		numbering: "1"
 	)
 	set text(font: serif, size: 12pt)
 	// headingが長いと、二行目以降のインデントが左寄せになり、行間の....の表示がおかしくなる場合がある
@@ -139,6 +138,8 @@
 }
 
 #let mainPage(doc) = {
+	set page(numbering: "1")
+	counter(page).update(1)
 	set text(lang: "ja", font: serif, size: 12pt, weight: "regular")
 	set ref(supplement: none)
 	set par(justify: true, first-line-indent: 1em, spacing: 0.65em)
@@ -198,6 +199,8 @@
 }
 
 #let overviewPage(doc) = {
+	set page(numbering: "1")
+	counter(page).update(1)
 	set text(lang: "ja", font: serif, size: 12pt)
 	set ref(supplement: none)
 	set par(justify: true, first-line-indent: 1em, spacing: 0.65em)
